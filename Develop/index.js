@@ -21,6 +21,56 @@ function writeToFile(fileName, data) {}
 // TODO: Create a function to initialize app
 function init() {
 
+    inquirer
+.prompt([
+    {
+      type: 'input',
+      name: 'title',
+      message: questions[0],
+    },
+    {
+      type: 'input',
+      name: 'description',
+      message: questions[1],
+    },
+    {
+      type: 'input',
+      name: 'install',
+      message: questions[2],
+    },
+    {
+      type: "input",
+      name: "usage",
+      message: questions[3],
+    },
+    {
+      type: "input",
+      name: "license",
+      message: questions[4],
+    },
+    {
+      type: "input",
+      name: "contribute",
+      message: questions[5],
+    },
+    {
+      type: "input",
+      name: "test",
+      message: questions[6],
+    },
+    {
+      type: "input",
+      name: "username",
+      message: questions[7],
+    },
+    {
+      type: "input",
+      name: "email",
+      message: questions[8],
+    },
+  ])
+  .then((data) => writeToFile("README.md", data))
+
 } // put inquirer prompt here
 
 // Function call to initialize app
