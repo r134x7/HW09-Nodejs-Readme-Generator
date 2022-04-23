@@ -48,9 +48,11 @@ function init() {
       message: questions[3],
     },
     {
-      type: "input",
+      type: "list",
       name: "license",
       message: questions[4],
+      choices: ['MIT License', ' Apache License 2.0', 'Mozilla Public License 2.0', 'GNU GPLv3', "No License used." ],
+
     },
     {
       type: "input",

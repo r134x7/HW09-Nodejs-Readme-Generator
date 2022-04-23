@@ -1,36 +1,95 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function renderLicenseBadge(license) {
+  if (license.includes("MIT")) {
+    // return something
+  } else if (license.includes("Apache")) {
+    // return something
+  } else if (license.includes("Mozilla")) {
+    // return something
+  } else if (license.includes("GNU")) {
+    // return something
+  } else {
+    return "";
+  }
+}
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  if (license.includes("MIT")) {
+    // return something
+  } else if (license.includes("Apache")) {
+    // return something
+  } else if (license.includes("Mozilla")) {
+    // return something
+  } else if (license.includes("GNU")) {
+    // return something
+  } else {
+    return "";
+  }
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  if (license.includes("MIT")) {
+    // return something
+  } else if (license.includes("Apache")) {
+    // return something
+  } else if (license.includes("Mozilla")) {
+    // return something
+  } else if (license.includes("GNU")) {
+    // return something
+  } else {
+    return "";
+  }
+}
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(data, license) {
+function generateMarkdown(data) {
+  
+  const badge = renderLicenseBadge(data.license)
+
+  const link = renderLicenseLink(data.license)
+
+  const section = renderLicenseSection(data.license) 
+
   return `# ${data.title}
 
-  ## ${data.description}
+  ## Description
+  
+  ${data.description}
 
-  ## ${data.contents}
+  ## Contents
+  
+  ${data.contents}
 
-  ## ${data.installation}
+  ## Installation
+  
+  ${data.installation}
 
-  ## ${data.usage}
+  ## Usage
+  
+  ${data.usage}
 
-  ## ${data.license}
+  ## Licensing
+  
+  ${data.license}
 
-  ## ${data.contributing}
+  ## Contributing
+  
+  ${data.contributing}
 
-  ## ${data.tests}
+  ## Test
+  
+  ${data.tests}
 
-  ## ${data.questions}
+  ## Questions
+  
+  ${data.questions}
 
 `;
 }
 
-module.exports = generateMarkdown(data, license);
+module.exports = generateMarkdown(data);
