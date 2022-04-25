@@ -77,7 +77,8 @@ function generateMarkdown(data) {
 
   ## Licensing
   
-  ${data.license}
+  ${section}
+  ${link}
 
   ## Contributing
   
@@ -94,4 +95,4 @@ function generateMarkdown(data) {
 `;
 }
 
-module.exports = generateMarkdown(data);
+module.exports = {generateMarkdown};
