@@ -6,14 +6,18 @@ const markdown = require("./utils/generateMarkdown")
 // TODO: Create an array of questions for user input
 const questions = [
     "What is your project title?",
-    "What does this project do?",
-    "What are the installation steps?",
-    "What instructions or examples are there using the project?",
+    "What is the description of this project?",
+    "What installation steps are required to run this?",
+    `What instructions or examples are there using the project? (To add a screenshot, type the following assuming you have a screenshot setup in the following folder: 
+    \`\`\`md
+    ![alt text](assets/images/screenshot.png)
+    \`\`\`
+    `,
     "What license does it use?",
-    "Are there any contributors?",
-    "What tests have you written to be able to run from the readme?",
-    "What is your GitHub username?",
-    "What is your email address?"
+    "Are there any contributing guidelines? If yes, select the first option. Otherwise, undefined.",
+    "What tests have you written to be able to run from the readme? You must write them here.",
+    "What is your GitHub username? (Your Github profile will be added automatically)",
+    "What is your email address? (To contact you.)"
 ];
 
 // TODO: Create a function to write README file
@@ -51,13 +55,13 @@ function init() {
       type: "list",
       name: "license",
       message: questions[4],
-      choices: ['MIT License', ' Apache License 2.0', 'Mozilla Public License 2.0', 'GNU GPLv3', "No License used." ],
-
+      choices: ['No License used.', 'MIT License', 'Apache License 2.0', 'Mozilla Public License 2.0', 'GNU GPLv3'],
     },
     {
-      type: "input",
+      type: "list",
       name: "contribute",
       message: questions[5],
+      choices: ["Contributing guidelines: [Code of conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/)", ""]
     },
     {
       type: "input",
