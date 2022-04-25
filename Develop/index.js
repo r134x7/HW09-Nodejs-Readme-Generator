@@ -76,7 +76,7 @@ function init() {
     },
   ])
 //   .then((data) => writeToFile("README.md", data))
-    .then((data) => writeToFile("README.md", generateMarkdown(data)))
+    .then((data) => writeToFile("README.md", markdown.generateMarkdown(data)))
 } // put inquirer prompt here
 
 // Function call to initialize app

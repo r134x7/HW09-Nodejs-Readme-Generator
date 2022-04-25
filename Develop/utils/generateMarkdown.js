@@ -2,13 +2,13 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license.includes("MIT")) {
-    // return something
+    return "![MIT License](https://img.shields.io/badge/License-MIT-red)"
   } else if (license.includes("Apache")) {
-    // return something
+    return "![Apache 2.0 License](https://img.shields.io/badge/License-Apache%202.0-yellow)"
   } else if (license.includes("Mozilla")) {
-    // return something
+    return "![Mozilla Public License 2.0](https://img.shields.io/badge/License-Mozilla%20Public%202.0-yellowgreen)"
   } else if (license.includes("GNU")) {
-    // return something
+    return "![GNU General Public License v3.0](https://img.shields.io/badge/License-GNU%20General%20Public%20v3.0-blue)"
   } else {
     return "";
   }
@@ -18,13 +18,13 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (license.includes("MIT")) {
-    // return something
+    return "[MIT License](https://choosealicense.com/licenses/mit/)"
   } else if (license.includes("Apache")) {
-    // return something
+    return "[Apache 2.0 License](https://choosealicense.com/licenses/apache-2.0/)"
   } else if (license.includes("Mozilla")) {
-    // return something
+    return "[Mozilla Public License 2.0](https://choosealicense.com/licenses/mpl-2.0/)"
   } else if (license.includes("GNU")) {
-    // return something
+    return "[GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/)"
   } else {
     return "";
   }
@@ -34,13 +34,13 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (license.includes("MIT")) {
-    // return something
+    return "Licensed under the MIT License."
   } else if (license.includes("Apache")) {
-    // return something
+    return "Licensed under the Apache 2.0 License."
   } else if (license.includes("Mozilla")) {
-    // return something
+    return "Licensed under the Mozilla Public License 2.0."
   } else if (license.includes("GNU")) {
-    // return something
+    return "Licensed under the GNU General Public License v3.0"
   } else {
     return "";
   }
@@ -56,6 +56,8 @@ function generateMarkdown(data) {
   const section = renderLicenseSection(data.license) 
 
   return `# ${data.title}
+
+  ${badge}
 
   ## Description
   
