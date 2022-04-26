@@ -72,6 +72,7 @@ function generateMarkdown(data) {
   ${licenseShortcut}
   - [Contributing](#contributing)
   - [Tests](#tests)
+  - [Questions](#questions)
 
   # Installation
   
