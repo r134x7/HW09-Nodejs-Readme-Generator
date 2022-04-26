@@ -49,7 +49,13 @@ function generateMarkdown(data) {
 
   const link = renderLicenseLink(data.license) // calls the function inside the generateMarkdown function to return a const
 
-  const section = renderLicenseSection(data.license) // calls the function inside the generateMarkdown function to return a const 
+  const section = renderLicenseSection(data.license) // calls the function inside the generateMarkdown function to return a const
+  
+  if (section === "") {
+    licenseShortcut = "";
+  } else {
+    licenseShortcut = "- [License](#license)";
+  }
 
   return `# ${data.title}
 
@@ -63,7 +69,7 @@ function generateMarkdown(data) {
   
   - [Installation](#installation)
   - [Usage](#usage)
-  - [License](#license)
+  ${licenseShortcut}
   - [Contributing](#contributing)
   - [Tests](#tests)
 
