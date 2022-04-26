@@ -36,7 +36,7 @@ function renderLicenseSection(license) {
   if (!license.includes("No License used.")) {
     return `# License
     
-    Licensed under the `
+  Licensed under the `
   } else {
     return "";
   }
