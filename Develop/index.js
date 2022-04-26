@@ -4,7 +4,7 @@ const fs = require('fs');
 const markdown = require("./utils/generateMarkdown")
 
 // TODO: Create an array of questions for user input
-const questions = [
+const questions = [ // array length = 9
     "What is your project title?",
     "What is the description of this project?",
     "What installation steps are required to run this?",
@@ -14,7 +14,7 @@ const questions = [
     \`\`\`
     `,
     "What license does it use?",
-    "Are there any contributing guidelines? If yes, select the first option. Otherwise, undefined.",
+    "Are there any contributing guidelines?",
     "What tests have you written to be able to run from the readme? You must write them here.",
     "What is your GitHub username? (Your Github profile will be added automatically)",
     "What is your email address? (To contact you.)"
@@ -23,14 +23,14 @@ const questions = [
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
 
-    fs.writeFile(fileName, data, (err) => err ? console.log(err) : console.log("Markdown file generated."))
+    fs.writeFile(fileName, data, (err) => err ? console.log(err) : console.log("Markdown file generated.")) // if there is an error, an error is shown on the terminal, else the terminal says file was written successfully.
 }
 
 // TODO: Create a function to initialize app
 function init() {
 
-    inquirer
-.prompt([
+    inquirer // inquirer is called in the init function
+.prompt([ // prompt method to bring up questions for input
     {
       type: 'input',
       name: 'title',
@@ -61,7 +61,7 @@ function init() {
       type: "list",
       name: "contribute",
       message: questions[5],
-      choices: ["Contributing guidelines: [Code of conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/)", ""]
+      choices: ["Contributing guidelines: [Code of conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/)", "To be decided on at a later date."]
     },
     {
       type: "input",
@@ -79,9 +79,8 @@ function init() {
       message: questions[8],
     },
   ])
-//   .then((data) => writeToFile("README.md", data))
-    .then((data) => writeToFile("README.md", markdown.generateMarkdown(data)))
-} // put inquirer prompt here
+    .then((data) => writeToFile("README.md", markdown.generateMarkdown(data))) // making use of first-class functions: to use a function (i.e. generateMarkdown(data)) as the parameter inside another function.
+}
 
 // Function call to initialize app
 init();

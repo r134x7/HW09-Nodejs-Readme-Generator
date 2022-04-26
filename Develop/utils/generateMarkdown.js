@@ -49,50 +49,50 @@ function renderLicenseSection(license) {
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   
-  const badge = renderLicenseBadge(data.license)
+  const badge = renderLicenseBadge(data.license) // calls the function inside the generateMarkdown function to return a const
 
-  const link = renderLicenseLink(data.license)
+  const link = renderLicenseLink(data.license) // calls the function inside the generateMarkdown function to return a const
 
-  const section = renderLicenseSection(data.license) 
+  const section = renderLicenseSection(data.license) // calls the function inside the generateMarkdown function to return a const 
 
   return `# ${data.title}
 
   ${badge}
 
-  ## Description
+  # Description
   
   ${data.description}
 
-  ## Table of Contents
+  # Table of Contents
   
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
-- [Contributers](#contributers)
+- [Contributing](#contributing)
 - [Tests](#tests)
 
-  ## Installation
+  # Installation
   
   ${data.install}
 
-  ## Usage
+  # Usage
   
   ${data.usage}
 
-  ## Licensing
+  # License
   
   ${section}
   ${link}
 
-  ## Contributers
+  # Contributing
   
   ${data.contribute}
 
-  ## Tests
+  # Tests
   
   ${data.test}
 
-  ## Questions
+  # Questions
   
   You can find my GitHub profile at: https://github.com/${data.username}
   If you have any questions, you can contact me by email: ${data.email}
@@ -100,4 +100,4 @@ function generateMarkdown(data) {
 `;
 }
 
-module.exports = {generateMarkdown};
+module.exports = {generateMarkdown}; // right hand side of module.exports requires the use of an object to get module.exports to work correctly, functions do not need their parameters written here.
