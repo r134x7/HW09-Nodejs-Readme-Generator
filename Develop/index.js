@@ -8,11 +8,7 @@ const questions = [ // array length = 9
     "What is your project title?",
     "What is the description of this project?",
     "What installation steps are required to run this?",
-    `What instructions or examples are there using the project? (To add a screenshot, type the following assuming you have a screenshot setup in the following folder: 
-    \`\`\`md
-    ![alt text](assets/images/screenshot.png)
-    \`\`\`
-    `,
+    "What instructions or examples are there using the project? (To add a screenshot, copy and paste the following and edit where necessary: ![alt text](assets/images/screenshot.png)",
     "What license does it use?",
     "Are there any contributing guidelines?",
     "What tests have you written to be able to run from the readme? You must write them here.",
